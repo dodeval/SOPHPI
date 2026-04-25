@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <!-- Оригинальный remote Sophgo -->
+    <remote name="origin" fetch="git@github.com:sophgo/" review="git@github.com:sophgo/"/>
+    <!-- Твой личный remote для форков -->
+    <remote name="dodeval" fetch="git@github.com:dodeval/"/>
+
+    <!-- По умолчанию используем ветку Sophgo, если не указано иное -->
+    <default revision="sg200x-dev" remote="origin" sync-j="4"/>
+
+    <!-- ТВОИ ИЗМЕНЕННЫЕ РЕПОЗИТОРИИ (Тянем из твоего аккаунта) -->
+    <project name="SOPHPI-build" path="build" remote="dodeval" revision="licheervnano"/>
+    <project name="SOPHPI-buildroot-2021.05" path="buildroot-2021.05" remote="dodeval" revision="licheervnano"/>
+    <project name="SOPHPI-cvi_mpi" path="cvi_mpi" remote="dodeval" revision="licheervnano"/>
+    <project name="SOPHPI-cvi_rtsp" path="cvi_rtsp" remote="dodeval" revision="licheervnano"/>
+    <project name="SOPHPI-u-boot-2021.10" path="u-boot-2021.10" remote="dodeval" revision="licheervnano"/>
+    <project name="SOPHPI-linux_5.10" path="linux_5.10" remote="dodeval" revision="licheervnano"/>
+    <project name="SOPHPI-SensorSupportList" path="cvi_mpi/component/isp" remote="dodeval" revision="licheervnano"/>
+    <!-- Добавь сюда SOPHPI-build или другие, если ты их тоже форкнул -->
+
+    <!-- ОРИГИНАЛЬНЫЕ РЕПОЗИТОРИИ (Тянем напрямую от Sophgo) -->
+    <project name="host-tools" revision="master"/>
+    <project name="freertos" path="freertos"/>
+    <project name="FreeRTOS-Kernel" path="freertos/Source"/>
+    <project name="Lab-Project-FreeRTOS-POSIX" path="freertos/Source/FreeRTOS-Plus-POSIX"/>
+    <project name="fsbl"/>
+    <project name="opensbi"/>
+    <project name="osdrv"/>
+    <project name="ramdisk"/>
+    <project name="oss" revision="master"/>
+    <project name="isp_tuning"/>
+    <project name="cvibuilder" path="cvibuilder"/>
+    <project name="cvikernel" path="cvikernel"/>
+    <project name="cviruntime" path="cviruntime"/>
+    <project name="cvimath" path="cvimath"/>
+    <project name="flatbuffers" path="flatbuffers" revision="master"/>
+    <project name="cnpy" path="cnpy" revision="tpu"/>
+    <project name="tdl_sdk" path="tdl_sdk" revision="master"/>
+    <project name="ive"/>
+</manifest>
