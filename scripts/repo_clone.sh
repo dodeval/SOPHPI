@@ -30,7 +30,8 @@ fi
 
 # 获取 User Name
 function get_user_name {
-    USERNAME=$(git config --global user.name)
+    # USERNAME=$(git config --global user.name)
+    USERNAME=Castorkin
 }
 get_user_name
 
@@ -87,6 +88,7 @@ function git_clone {
     while IFS= read -r line
     do
         repo=$(echo "$line" | grep -o '<project name="[^"]*"' | sed 's/.*name="\([^"]*\)".*/\1/')
+        remote_url=$(echo "$line" | grep -o 'remote_url="[^"]*"' | sed 's/.*remote_url="\([^"]*\)".*/\1/')
         revision=$(echo "$line" | grep -o 'revision="[^"]*"' | sed 's/.*revision="\([^"]*\)".*/\1/')
         path=$(echo "$line" | grep -o 'path="[^"]*"' | sed 's/.*path="\([^"]*\)".*/\1/')
         sync=$(echo "$line" | grep -o 'sync-s="[^"]*"' | sed 's/.*sync-s="\([^"]*\)".*/\1/')
@@ -106,6 +108,11 @@ function git_clone {
             path=$repo
         fi
 
+        # 判断参数是否带有remote_url
+        if [[ -z $remote_url ]]; then
+            remote_url=$REMOTE_URL
+        fi
+
         # 判断是否已经下载了repo
         if [[ -d $PWD/$path ]]; then
             echo -e "${YELLOW}Warning: target porject already exist!! $PWD/$path${NC}"
@@ -114,9 +121,9 @@ function git_clone {
 
         # 判断参数是否带有normal
         if [ $NORMAL == 0 ]; then
-            git clone $REMOTE_URL$repo.git $PWD/$path -b $revision $PARAMETERS
+            git clone -b $revision $PARAMETERS $remote_url$repo.git $PWD/$path
         else
-            git clone $REMOTE_URL$repo.git $PWD/$path
+            git clone $remote_url$repo.git $PWD/$path
             pushd $PWD/$path
                 git checkout $revision
             popd
