@@ -14,6 +14,7 @@
     <project name="SOPHPI-u-boot-2021.10" path="u-boot-2021.10" remote_url="git@github.com:dodeval/" revision="licheervnano"/>
     <project name="SOPHPI-linux_5.10" path="linux_5.10" remote_url="git@github.com:dodeval/" revision="licheervnano"/>
     <project name="SOPHPI-SensorSupportList" path="cvi_mpi/component/isp" remote_url="git@github.com:dodeval/" revision="licheervnano"/>
+    <project name="SOPHPI-flatbuffers" path="flatbuffers" remote_url="git@github.com:dodeval/" revision="master"/>
     <!-- Добавь сюда SOPHPI-build или другие, если ты их тоже форкнул -->
 
     <!-- ОРИГИНАЛЬНЫЕ РЕПОЗИТОРИИ (Тянем напрямую от Sophgo) -->
@@ -31,7 +32,6 @@
     <project name="cvikernel" path="cvikernel"/>
     <project name="cviruntime" path="cviruntime"/>
     <project name="cvimath" path="cvimath"/>
-    <project name="flatbuffers" path="flatbuffers" revision="master"/>
     <project name="cnpy" path="cnpy" revision="tpu"/>
     <project name="tdl_sdk" path="tdl_sdk" revision="master"/>
     <project name="ive"/>

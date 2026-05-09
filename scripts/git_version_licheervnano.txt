@@ -7,9 +7,6 @@ commit_id: 103c66f126fa98fcaa8b54f37fa06f6b293fd074 host-tools: upload Xuantie-9
 project_name: cvimath
 commit_id: ce8705f49da5e5f59c2ddb3253ef88323a0cd9c4 [feat] cvimath opensource for cv18xx soc.
 
-project_name: flatbuffers
-commit_id: 6da1cf79d90eb242e7da5318241d42279a3df3ba [rust] Add use declarations to Rust-generated bindings for imported FB definitions (#5645)
-
 project_name: oss
 commit_id: 2a48130226c06a2ad0dc303dc7d146da92cdfdd3 [feat](oss): add kissfft.tar.gz & kaldi-native-fbank.tar.gz tarball
 
