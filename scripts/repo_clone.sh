@@ -30,8 +30,7 @@ fi
 
 # 获取 User Name
 function get_user_name {
-    # USERNAME=$(git config --global user.name)
-    USERNAME=Castorkin
+    USERNAME=$(git config --global user.name)
 }
 get_user_name
 
