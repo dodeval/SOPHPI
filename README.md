@@ -11,6 +11,9 @@ mkdir -p <WORKSPACE>
 cd <WORKSPACE>
 git clone -b licheervnano git@github.com:dodeval/SOPHPI.git sophpi
 ./sophpi/scripts/repo_clone.sh --gitclone sophpi/scripts/subtree-licheervnano.xml --reproduce sophpi/scripts/git_version_licheervnano.txt
+cd sophpi/scripts
+docker build -t sophpi-build .
+docker run -it --name sophpi-build --user $(id -u):$(id -g) -v /etc/passwd:/etc/passwd:ro -v /etc/group:/etc/group:ro -v ~/<WORKSPACE>:/workspace -w /workspace sophpi-build /bin/bash
 ```
 
 步骤二:
