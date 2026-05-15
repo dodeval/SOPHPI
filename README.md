@@ -12,8 +12,19 @@ cd <WORKSPACE>
 git clone -b licheervnano git@github.com:dodeval/SOPHPI.git sophpi
 ./sophpi/scripts/repo_clone.sh --gitclone sophpi/scripts/subtree-licheervnano.xml --reproduce sophpi/scripts/git_version_licheervnano.txt
 cd sophpi/scripts
-docker build -t sophpi-build .
-docker run -it --name sophpi-build --user $(id -u):$(id -g) -v /etc/passwd:/etc/passwd:ro -v /etc/group:/etc/group:ro -v ~/<WORKSPACE>:/workspace -w /workspace sophpi-build /bin/bash
+docker build \
+  --build-arg USER_NAME=$(id -un) \
+  --build-arg USER_ID=$(id -u) \
+  --build-arg GROUP_NAME=$(id -gn) \
+  --build-arg GROUP_ID=$(id -g) \
+  -t sophgo-build .
+docker run -it \
+  --name sophpi-build \
+  -v "$HOME:$HOME" \
+  -v "$(pwd):$(pwd)" \
+  -w "$(pwd)" \
+  sophgo-build:latest bash
+etc/group:/etc/group:ro -v ~/<WORKSPACE>:/workspace -w /workspace sophpi-build /bin/bash
 ```
 
 步骤二:
