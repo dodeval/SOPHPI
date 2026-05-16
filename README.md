@@ -24,7 +24,6 @@ docker run -it \
   -v "$(pwd):$(pwd)" \
   -w "$(pwd)" \
   sophgo-build:latest bash
-etc/group:/etc/group:ro -v ~/<WORKSPACE>:/workspace -w /workspace sophpi-build /bin/bash
 ```
 
 步骤二:
