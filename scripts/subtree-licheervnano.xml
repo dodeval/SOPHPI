@@ -15,6 +15,8 @@
     <project name="SOPHPI-linux_5.10" path="linux_5.10" remote_url="git@github.com:dodeval/" revision="licheervnano"/>
     <project name="SOPHPI-SensorSupportList" path="cvi_mpi/component/isp" remote_url="git@github.com:dodeval/" revision="licheervnano"/>
     <project name="SOPHPI-flatbuffers" path="flatbuffers" remote_url="git@github.com:dodeval/" revision="licheervnano"/>
+    <project name="SOPHPI-projects" path="projects" remote_url="git@github.com:dodeval/" revision="master"/>
+    <project name="SOPHPI-isp" path="cvi_mpi/modules/isp" remote_url="git@github.com:dodeval/" revision="licheervnano"/>
     <!-- Добавь сюда SOPHPI-build или другие, если ты их тоже форкнул -->
 
     <!-- ОРИГИНАЛЬНЫЕ РЕПОЗИТОРИИ (Тянем напрямую от Sophgo) -->
